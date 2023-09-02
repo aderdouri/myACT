@@ -82,9 +82,7 @@ EMTboost_HE_real <- function(train.dat,
     ############
     ## M-step ##
     #  update F
-    TDboost.obj <- TDboost(formula =  CLM_AMT5~KIDSDRIV+ 
-                             TRAVTIME+CAR_USE+BLUEBOOK+RETAINED+NPOLICY+CAR_TYPE+REVOLKED+MVR_PTS+AGE+HOMEKIDS+
-                             INCOME+GENDER+MARRIED+JOBCLASS+MAX_EDUC+AREA,
+    TDboost.obj <- TDboost(formula = CHARGE ~ AGECOND+RM+ACV,
                            #weights = delta,
                            data = train.dat,
                            distribution = list(name="EDM",alpha=rho), 
