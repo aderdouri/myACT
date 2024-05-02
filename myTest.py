@@ -1,24 +1,13 @@
-def fibonacci(n):
-    if n <= 0:
-        return []
-    elif n == 1:
-        return [0]
-    elif n == 2:
-        return [0, 1]
-    else:
-        fib_sequence = [0, 1]
-        while len(fib_sequence) < n:
-            next_num = fib_sequence[-1] + fib_sequence[-2]
-            fib_sequence.append(next_num)
-        return fib_sequence
+from pathlib import Path
 
-def sqrt(x):
-    return x ** 0.5
+absent_files = set()
+directory = Path(aller_dir)
+diff_aller_retour_set = set(diff_aller_retour)  # Convert list to set for faster lookup
 
-def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n - 1)
-    
-    
+for file_path in directory.iterdir():
+    if file_path.is_file():
+        with open(file_path, 'r') as sftrFile:
+            content = sftrFile.read()
+            if any(BizMsgIdr in content for BizMsgIdr in diff_aller_retour_set):
+                print(file_path, BizMsgIdr)
+                absent_files.add(str(file_path))
